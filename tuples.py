@@ -10,19 +10,11 @@ def convert_coordinate(coordinate):
     return nuevacordenada
 
 def create_record(azara_record, rui_record):
-    
-    cordenada = azara_record[1]
-    tesoro = azara_record[0]
-    nuevacordenada = (cordenada[0],cordenada[1])
-    ubicacion = rui_record[0]
-    cordenadaa = rui_record[1]
-    cuadrante = rui_record[2]
-
-    if nuevacordenada == cordenadaa :
-        ubi_final = (tesoro, cordenada, ubicacion, cordenadaa, cuadrante)
-        return ubi_final
-
+    tesoro, coordenadaA=azara_record
+    ubicación, coordenadaR, cuadrante=rui_record
+    NUM,LETRA=coordenadaA
+    conjunto= NUM,LETRA
+    if conjunto==coordenadaR:
+        return tesoro, coordenadaA, ubicación, coordenadaR, cuadrante
     else:
         return "not a match"
-
-    return ()
