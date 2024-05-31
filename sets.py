@@ -1,17 +1,19 @@
-from sets_categories_data import (ALCOHOLS)
-
 def clean_ingredients(dish_name, dish_ingredients):
+    celanisimos=set()
+    comidita=[]
+    for e in (dish_name):
+        if e not in comidita:
+            comidita.append(e)
+    for e in (dish_ingredients):
+        celanisimos.add(e)
+    finishdish=(dish_name),celanisimos        
+    return finishdish
 
-    ingredientes=set(dish_ingredients)
-    return (dish_name, ingredientes)
+
 
 def check_drinks(drink_name, drink_ingredients):
-    
-    alcol=bebidas.intersection(ALCOHOLS) 
-    bebidas=set(drink_ingredients)
-    if len(alcol) != 0:
-        nombre = f"{drink_name} Cocktail"
-        return (nombre)
-    elif len(alcol) == 0:
-        nombre = f"{drink_name} Mocktail"
-        return (nombre)
+  
+    for e in drink_ingredients:
+        if e in ALCOHOLS:
+            return drink_name+" Cocktail" 
+    return drink_name+" Mocktail"
