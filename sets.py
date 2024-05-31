@@ -1,3 +1,6 @@
+from sets_categories_data import (ALCOHOLS)
+
+
 def clean_ingredients(dish_name, dish_ingredients):
     celanisimos=set()
     comidita=[]
